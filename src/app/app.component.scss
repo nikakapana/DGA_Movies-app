@@ -1,0 +1,23 @@
+
+
+.movies-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.movie-poster {
+  transition: transform 0.5s ease;
+  max-width: 100px;
+  height: auto;
+  border-radius: 8px;
+  width: 100%;
+  object-fit: contain;
+  object-position: center;
+}
+.movie-poster:hover {
+  cursor: pointer;
+  transform: scale(1.5);
+
+}

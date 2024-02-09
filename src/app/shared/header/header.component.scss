@@ -1,0 +1,38 @@
+header {
+  .navbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 2rem;
+    height: 65px;
+    background-color: #212121FF;
+    margin: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
+    &-logo {
+      display: block;
+
+      img {
+        width: 60px;
+      }
+    }
+
+  }
+
+  .example-form {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-left: 20px;
+    width: 550px;
+
+    button {
+      padding: 20px 50px;
+      margin-bottom: 15px;
+    }
+
+    mat-form-field {
+      width: 100%;
+    }
+  }
+}

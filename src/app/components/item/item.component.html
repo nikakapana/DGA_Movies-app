@@ -1,0 +1,11 @@
+<ng-container *ngIf="itemData">
+  <a class="item" >
+    <div class="item-rating">
+      <span>Release Date: {{itemData.year}}</span>
+    </div>
+    <div class="item-image">
+      <img [src]="itemData?.image?.url" [alt]="itemData?.title" />
+    </div>
+    <div class="item-title">{{ itemData?.title }}</div>
+  </a>
+</ng-container>
