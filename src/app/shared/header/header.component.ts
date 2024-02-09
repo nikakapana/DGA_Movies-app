@@ -1,6 +1,5 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {FormControl} from "@angular/forms";
-import {resolve} from "@angular/compiler-cli";
 import {DataStateSubjectService} from "../../core/services/dataStateSubject.service";
 import {UntilDestroy, untilDestroyed} from "@ngneat/until-destroy";
 
