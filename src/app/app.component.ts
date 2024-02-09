@@ -1,7 +1,10 @@
 import {Component, OnInit} from '@angular/core';
 import {GetMoviesService} from "./core/services/get-movies.service";
 import {MovieItem} from "./core/interfaces/movieResponse";
+import {UntilDestroy, untilDestroyed} from "@ngneat/until-destroy";
+import {DataStateSubjectService} from "./core/services/dataStateSubject.service";
 
+@UntilDestroy()
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -12,21 +15,29 @@ export class AppComponent implements OnInit{
   popularMovies: MovieItem[] = []
   movieSearchValue: MovieItem[] = []
 
-  constructor(private getMoviesService : GetMoviesService) {
+  constructor(private getMoviesService : GetMoviesService,
+              private dataStateSubjectService: DataStateSubjectService) {
 
   }
   ngOnInit(): void {
-    this.getMoviesService.getMovies().subscribe(res => {
-      console.log(res)
-      this.popularMovies = res.results
-    })
+    this.fetchMovies()
   }
 
+  fetchMovies(searchTerm?: string): void {
+    this.getMoviesService.getMovies(searchTerm)
+      .pipe(untilDestroyed(this))
+      .subscribe(res => {
+
+        if (searchTerm) {
+          this.movieSearchValue = res.results;
+          this.dataStateSubjectService.updateDataLoadedState(false)
+        } else {
+          this.popularMovies = res.results;
+        }
+      });
+  }
   onSearch($event: any) {
-    this.getMoviesService.getMovies($event).subscribe(res => {
-      console.log(res)
-      this.movieSearchValue = res.results
-    })
+    this.fetchMovies($event);
   }
 
   clearSearch() {

@@ -1,7 +1,10 @@
-import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {FormControl} from "@angular/forms";
 import {resolve} from "@angular/compiler-cli";
+import {DataStateSubjectService} from "../../core/services/dataStateSubject.service";
+import {UntilDestroy, untilDestroyed} from "@ngneat/until-destroy";
 
+@UntilDestroy()
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -10,18 +13,25 @@ import {resolve} from "@angular/compiler-cli";
 export class HeaderComponent implements OnInit{
   @Output() searchValue = new EventEmitter<any>();
   @Output() clearValue = new EventEmitter<boolean>();
+  dataInProgress = false
   movieSearch = new FormControl('');
 
+  constructor(private dataStateSubjectService: DataStateSubjectService) {
+  }
   ngOnInit(): void {
     this.movieSearch.valueChanges.subscribe(res => {
       if (res === '') {
         this.clearValue.emit(true)
       }
     })
+    this.dataStateSubjectService.getDataLoadValue().pipe(untilDestroyed(this)).subscribe(res => {
+      this.dataInProgress = false
+    })
   }
 
   searchMovies() {
     this.searchValue.emit(this.movieSearch.value);
+    this.dataInProgress = true;
   }
 
 }

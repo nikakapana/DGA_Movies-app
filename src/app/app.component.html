@@ -1,5 +1,5 @@
 
-<app-header (searchValue)="onSearch($event)" (clearValue)="clearSearch()"></app-header>
+<app-header (searchValue)="onSearch($event)" (clearValue)="clearSearch() "></app-header>
 <div class="movies-gallery">
   <img *ngFor="let movie of movieSearchValue" [src]="movie.image?.url" [alt]="movie.title" class="movie-poster">
 </div>
