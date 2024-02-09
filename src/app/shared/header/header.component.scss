@@ -2,7 +2,7 @@ header {
   .navbar {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
     padding-top: 2rem;
     height: 65px;
     background-color: #212121FF;
@@ -39,5 +39,8 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+  .time {
+    font-weight: 550;
   }
 }

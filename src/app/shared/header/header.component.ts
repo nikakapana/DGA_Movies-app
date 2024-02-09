@@ -14,6 +14,7 @@ export class HeaderComponent implements OnInit{
   @Output() clearValue = new EventEmitter<boolean>();
   dataInProgress = false
   movieSearch = new FormControl('');
+  today = new Date()
 
   constructor(private dataStateSubjectService: DataStateSubjectService) {
   }

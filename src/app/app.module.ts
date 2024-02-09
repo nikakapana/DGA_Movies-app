@@ -14,6 +14,7 @@ import {MoviesContainerComponent} from "./components/movies-container/movies-con
 import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
 import {ReactiveFormsModule} from "@angular/forms";
 import {MatButtonModule} from "@angular/material/button";
+import {FormatDatePipe} from "./core/pipes/formatDatePipe";
 
 @NgModule({
   declarations: [
@@ -21,19 +22,20 @@ import {MatButtonModule} from "@angular/material/button";
     MainLayoutComponent,
     HeaderComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule,
-    FooterComponent,
-    BrowserAnimationsModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MoviesContainerComponent,
-    MatProgressSpinnerModule,
-    ReactiveFormsModule,
-    MatButtonModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        HttpClientModule,
+        FooterComponent,
+        BrowserAnimationsModule,
+        MatFormFieldModule,
+        MatInputModule,
+        MoviesContainerComponent,
+        MatProgressSpinnerModule,
+        ReactiveFormsModule,
+        MatButtonModule,
+        FormatDatePipe
+    ],
   providers: [{
     provide: HTTP_INTERCEPTORS,
     useClass: AuthInterceptor,
