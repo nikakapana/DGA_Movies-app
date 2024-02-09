@@ -18,13 +18,13 @@
     }
   }
 
-  &-rating {
+  &-releaseDate {
     position: absolute;
     display: flex;
     align-items: center;
     top: 10px;
     left: 10px;
-    background-color: #212121FF;
+    background-color: rgba(33, 33, 33, 0.55);
     border-radius: 5px;
     padding: 5px 10px;
 
