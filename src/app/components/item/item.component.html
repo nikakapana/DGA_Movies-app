@@ -1,4 +1,4 @@
-<ng-container *ngIf="itemData">
+@if (itemData) {
   <a class="item" >
     <div class="item-releaseDate">
       <span>Release Date: {{itemData.year}}</span>
@@ -8,4 +8,4 @@
     </div>
     <div class="item-title">{{ itemData?.title }}</div>
   </a>
-</ng-container>
+}

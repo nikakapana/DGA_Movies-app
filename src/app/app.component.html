@@ -2,9 +2,11 @@
 <app-header (searchValue)="onSearch($event)" (clearValue)="clearSearch() "></app-header>
 <ng-container>
   <div class="movies-gallery">
-    <ng-container *ngFor="let movie of movieSearchValue">
-      <img *ngIf="movie.image?.url" [src]="movie.image?.url" [alt]="movie.title" class="movie-poster">
-    </ng-container>
+    @for (movie of movieSearchValue; track movie) {
+      @if (movie.image?.url) {
+        <img [src]="movie.image?.url" [alt]="movie.title" class="movie-poster">
+      }
+    }
   </div>
 </ng-container>
 <app-main-layout [popularMovies]="popularMovies"></app-main-layout>

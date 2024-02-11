@@ -1,2 +1,4 @@
-<mat-spinner *ngIf="!popularMovies.length"></mat-spinner>
+@if (!popularMovies.length) {
+  <mat-spinner></mat-spinner>
+}
 <movies-container [items]="popularMovies"></movies-container>

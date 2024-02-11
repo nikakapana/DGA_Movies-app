@@ -1,13 +1,11 @@
 import { Component, Input, OnInit } from '@angular/core';
 import {MovieItem} from "../../core/interfaces/movieResponse";
-import {NgIf} from "@angular/common";
+
 @Component({
   selector: 'item',
   templateUrl: './item.component.html',
   styleUrls: ['./item.component.scss'],
-  imports: [
-    NgIf
-  ],
+  imports: [],
   standalone: true
 })
 export class ItemComponent implements OnInit {

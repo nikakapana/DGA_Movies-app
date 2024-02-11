@@ -7,10 +7,12 @@
         <input style="width: 500px; padding-left: 15px; border-radius: 5px" matInput placeholder="Search Movies.." [formControl]="movieSearch">
       </mat-form-field>
       <button mat-raised-button color="primary" type="button" (click)="searchMovies()">Search</button>
-      </form>
+    </form>
   </nav>
   <div class="spinner-container">
-    <mat-spinner *ngIf="dataInProgress"></mat-spinner>
+    @if (dataInProgress) {
+      <mat-spinner></mat-spinner>
+    }
   </div>
 
 
