@@ -65,10 +65,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "moviee-app:build:production"
+              "buildTarget": "moviee-app:build:production"
             },
             "development": {
-              "browserTarget": "moviee-app:build:development"
+              "buildTarget": "moviee-app:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -76,7 +76,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "moviee-app:build"
+            "buildTarget": "moviee-app:build"
           }
         },
         "test": {
