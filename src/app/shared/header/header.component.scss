@@ -23,7 +23,6 @@ header {
     display: flex;
     align-items: center;
     gap: 20px;
-    margin-left: 20px;
     width: 550px;
 
     button {
@@ -36,6 +35,7 @@ header {
     }
   }
   .spinner-container {
+    margin-top: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
