@@ -1,5 +1,5 @@
 export const environment = {
   production: true,
   hmr: false,
-  fbDbUrl: 'https://online-movie-database.p.rapidapi.com/'
+  fbDbUrl: 'https://online-movie-database.p.rapidapi.com/',
 };

@@ -1,10 +1,16 @@
-
-<app-header (searchValue)="onSearch($event)" (clearValue)="clearSearch() "></app-header>
+<app-header
+  (searchValue)="onSearch($event)"
+  (clearValue)="clearSearch()"
+></app-header>
 <ng-container>
   <div class="movies-gallery">
     @for (movie of movieSearchValue; track movie) {
       @if (movie.image?.url) {
-        <img [src]="movie.image?.url" [alt]="movie.title" class="movie-poster">
+        <img
+          [src]="movie.image?.url"
+          [alt]="movie.title"
+          class="movie-poster"
+        />
       }
     }
   </div>

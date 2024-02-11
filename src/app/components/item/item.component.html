@@ -1,7 +1,7 @@
 @if (itemData) {
-  <a class="item" >
+  <a class="item">
     <div class="item-releaseDate">
-      <span>Release Date: {{itemData.year}}</span>
+      <span>Release Date: {{ itemData.year }}</span>
     </div>
     <div class="item-image">
       <img [src]="itemData?.image?.url" [alt]="itemData?.title" />

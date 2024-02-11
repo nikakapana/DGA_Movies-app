@@ -3,10 +3,9 @@ import { DatePipe } from '@angular/common';
 
 @Pipe({
   name: 'formatDate',
-  standalone: true
+  standalone: true,
 })
 export class FormatDatePipe implements PipeTransform {
-
   transform(value: any): any {
     const parsedDate = new Date(value);
 
